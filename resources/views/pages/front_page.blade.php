@@ -33,6 +33,8 @@
           <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
           </li>
+          <li class="nav-item"><a class="nav-link" href="{{route('login')}}">Login</a>
+          </li>
         </ul>
         <button type="button" class="rounded-pill btn-rounded">
           +1 728365413

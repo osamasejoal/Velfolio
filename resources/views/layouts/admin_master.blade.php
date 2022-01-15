@@ -44,12 +44,20 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>Banner<span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="ss.comFloo">Add Banner</a></li>
-                            <li><a href="ss.comFloo">View banner</a></li>
+                            <li><a href="{{ route('banner.create') }}">Add Banner</a></li>
+                            <li><a href="{{ route('banner.index') }}">View banner</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{asset('/')}}"><i class="ti-home"></i>Front Page</a></li>
-                    <li><a><i class="ti-close"></i> Logout</a></li>
+
+                    <li>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                            <i class="ti-close"></i> Logout
+                        </a>
+                        <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -220,7 +228,7 @@
                                     <div class="dropdown-content-body">
                                         <ul>
                                             <li>
-                                                <a href="{{asset('/')}}">
+                                                <a href="{{ asset('/') }}">
                                                     <i class="ti-home"></i>
                                                     <span>Front Page</span>
                                                 </a>
@@ -273,7 +281,7 @@
 
     @yield('dashboard_content')
 
-   
+
 
     <!-- jquery vendor -->
     <script src="{{ asset('backend/assets/js/lib/jquery.min.js') }}"></script>
